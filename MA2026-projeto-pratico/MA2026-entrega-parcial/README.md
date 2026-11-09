@@ -1,32 +1,41 @@
-# 📗 01 — Excel \| Tratamento Manual
+# 📦 Vila Viva \| Entrega Parcial
 
-## 📌 Objetivo
+Esta pasta reúne os materiais da **entrega parcial do projeto Vila Viva**, organizados conforme a evolução do tratamento e da análise de dados epidemiológicos de COVID-19, dengue e pneumonia.
 
-Este diretório reúne as **planilhas de origem e tratamento manual** utilizadas no projeto Vila Viva. Aqui são aplicadas fórmulas, verificações e procedimentos de auditoria que servem de referência para as etapas posteriores.
+## 🗂️ Estrutura dos diretórios
 
-## 📁 Arquivos de trabalho
+| Diretório | Conteúdo | Objetivo |
+| :---- | :---- | :---- |
+| [`01-excel`](./01-excel/) | Planilhas originais e fórmulas manuais | Preparar, conferir e auditar os dados de origem. |
+| [`02-powerquery`](./02-powerquery/) | Consultas e resultados automatizados | Executar transformações reproduzíveis e validar resultados. |
+| [`03-powerpivot`](./03-powerpivot/) | Arquivo de análises e visões | Explorar indicadores e comparações territoriais. |
+| [`04-documentacao`](./04-documentacao/) | Relatórios técnicos em PDF | Explicar métodos, regras, testes e limitações. |
 
-| Planilha | Dados e tratamento |
-| :---- | :---- |
-| `Vila_Viva_COVID19-1.xlsx` | Casos, óbitos, incidência, mortalidade, letalidade e checagens. |
-| `Vila_Viva_Dengue-1.xlsx` | Notificações, casos confirmados, proporções e incidência. |
-| `Vila_Viva_Pneumonia-1.xlsx` | Estrutura de internações, população, taxas e conferências. |
+## 🔁 Fluxo do projeto
 
-Cada arquivo possui quatro abas principais:
+```
+Bases de origem (COVID-19, Dengue, Pneumonia)
+                 ↓
+       01 · Excel manual
+                 ↓
+      02 · Power Query
+                 ↓
+     03 · Análises / Power Pivot
+                 ↓
+    04 · Documentação e evidências
+```
 
-- **Bruto:** registros recebidos e campos originais.  
-- **Tratado:** resultados organizados e calculados com fórmulas.  
-- **Cadastros:** referências de códigos e nomes dos municípios.  
-- **Auditoria:** ocorrências, validações e pendências identificadas.
+A documentação acompanha todas as etapas, não apenas o resultado final.
 
-## 🧮 Tratamentos realizados
+## 📊 Recorte dos dados
 
-São utilizadas operações de soma e contagem, cálculos de taxas por 100 mil habitantes, buscas em cadastros, limpeza e padronização de textos e verificações de consistência. A identificação dos registros considera município e ano.
+As bases de origem abrangem **645 municípios**, com registros anuais de **2022 a 2025** (2.580 linhas por base). A chave de referência é composta por `Ano` e `Codigo_Municipio_CVE`.
 
-## 🔗 Relação com as outras etapas
+## 🔍 Como avaliar a entrega
 
-Os resultados da aba **Tratado** são usados como referência para verificar se a automação com Power Query reproduz as regras de cálculo do Excel.
+1. Consulte os arquivos e fórmulas de `01-excel`.  
+2. Compare as regras manuais com as consultas de `02-powerquery`.  
+3. Examine as quatro visões analíticas em `03-powerpivot`.  
+4. Leia os relatórios de `04-documentacao` para entender as verificações e pendências.
 
-## ⚠️ Atenção
-
-Os arquivos contêm **dados brutos e dados tratados**, não apenas dados brutos. Há pendências registradas para COVID-19 e ausência de valores necessários para certos indicadores de pneumonia na versão de origem. Consulte o relatório `Documentacao_01_Manual.pdf` antes de interpretar resultados.
+> **Nota de qualidade:** resultados técnicos e indicadores epidemiológicos exigem validação de suas fontes. A presença de gráficos não comprova, isoladamente, relacionamentos ou medidas DAX implementados.
